@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftySSSExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Hy-jI-Ys6">
+                                <rect key="frame" x="10" y="136" width="394" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-Wc-Ayp">
+                                        <rect key="frame" x="0.0" y="0.0" width="234.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Shares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pL3-S9-dsV">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUG-oC-Yb1">
+                                                <rect key="frame" x="154" y="0.0" width="80.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Eov-t6-g9i">
+                                        <rect key="frame" x="242.5" y="0.0" width="151.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Threshold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pu-qY-J98">
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZH-7o-fKa">
+                                                <rect key="frame" x="96.5" y="0.0" width="55" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="znh-IL-Rvk">
+                                <rect key="frame" x="10" y="181" width="394" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Secret:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sG-4W-HJ3">
+                                        <rect key="frame" x="0.0" y="5" width="99.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oW8-dL-X0S">
+                                        <rect key="frame" x="109.5" y="0.0" width="222.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4d-6H-xSF">
+                                        <rect key="frame" x="342" y="0.0" width="52" height="30"/>
+                                        <state key="normal" title="Encode"/>
+                                        <connections>
+                                            <action selector="actionEncode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8hl-zT-kx7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="5bc-XE-raJ">
+                                <rect key="frame" x="10" y="226" width="394" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secure Shares:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dz-fV-7sA">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pHu-Oq-ipK">
+                                        <rect key="frame" x="194" y="0.0" width="200" height="150"/>
+                                        <color key="backgroundColor" white="0.91174983978271484" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="lE9-jl-epO"/>
+                                            <constraint firstAttribute="height" constant="150" id="sTU-Lf-9L8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pHu-Oq-ipK" secondAttribute="bottom" id="58c-HK-Gnw"/>
+                                    <constraint firstAttribute="height" constant="150" id="KhC-Hf-Km8"/>
+                                    <constraint firstItem="pHu-Oq-ipK" firstAttribute="top" secondItem="5bc-XE-raJ" secondAttribute="top" id="ggZ-qC-jld"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="75K-c8-QHm">
+                                <rect key="frame" x="10" y="391" width="394" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decoded Secret:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM9-pW-qq4">
+                                        <rect key="frame" x="0.0" y="5" width="128.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iSV-tj-Emh">
+                                        <rect key="frame" x="138.5" y="0.0" width="191.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Bs-bNs">
+                                        <rect key="frame" x="340" y="0.0" width="54" height="30"/>
+                                        <state key="normal" title="Decode"/>
+                                        <connections>
+                                            <action selector="actionDecode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jDa-mq-xLR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyH-75-e2b">
+                                <rect key="frame" x="169" y="436" width="76" height="30"/>
+                                <state key="normal" title="Clear Form"/>
+                                <connections>
+                                    <action selector="actionClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXi-cS-arU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="znh-IL-Rvk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="66v-PC-Q6b"/>
+                            <constraint firstItem="qyH-75-e2b" firstAttribute="top" secondItem="iSV-tj-Emh" secondAttribute="bottom" constant="15" id="BRE-ZV-znW"/>
+                            <constraint firstItem="75K-c8-QHm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Gvn-9X-unX"/>
+                            <constraint firstItem="znh-IL-Rvk" firstAttribute="top" secondItem="6Hy-jI-Ys6" secondAttribute="bottom" constant="15" id="HHz-2q-sLl"/>
+                            <constraint firstItem="qyH-75-e2b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KoQ-WT-ANt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5bc-XE-raJ" secondAttribute="trailing" constant="10" id="Qjw-7J-yFq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="znh-IL-Rvk" secondAttribute="trailing" constant="10" id="QrT-eY-11C"/>
+                            <constraint firstItem="6Hy-jI-Ys6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="SqN-cI-A7k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="75K-c8-QHm" secondAttribute="trailing" constant="10" id="YPo-Qh-eFF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Hy-jI-Ys6" secondAttribute="trailing" constant="10" id="Ygy-Kf-Lyj"/>
+                            <constraint firstItem="5bc-XE-raJ" firstAttribute="top" secondItem="znh-IL-Rvk" secondAttribute="bottom" constant="15" id="fqL-ip-Qio"/>
+                            <constraint firstItem="75K-c8-QHm" firstAttribute="top" secondItem="5bc-XE-raJ" secondAttribute="bottom" constant="15" id="jeb-Er-PUJ"/>
+                            <constraint firstItem="6Hy-jI-Ys6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="oNl-pp-aL7"/>
+                            <constraint firstItem="5bc-XE-raJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ruL-bb-1hS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="MaL-bd-ovu" appends="YES" id="Bfv-om-7Wd"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="decodedSecretTextField" destination="iSV-tj-Emh" id="QyH-8A-yCb"/>
+                        <outlet property="numberOfSharesTextField" destination="qUG-oC-Yb1" id="yWS-qJ-d1g"/>
+                        <outlet property="secretTextField" destination="oW8-dL-X0S" id="jxP-8m-fEH"/>
+                        <outlet property="sharesTextView" destination="pHu-Oq-ipK" id="RHj-YO-amN"/>
+                        <outlet property="thresholdTextField" destination="PZH-7o-fKa" id="xbj-cw-w3b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MaL-bd-ovu">
+                    <connections>
+                        <action selector="actionVoidTap:" destination="BYZ-38-t0r" id="5yZ-J6-OwK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="99" y="-13"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,6 +1,6 @@
 # About
 A pure Swift implementation of <a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">Shamir's Secret Sharing</a> scheme. SwiftySSS is a library that exposes an API to split secret data buffers into a number of different shares. With the possession of some or all of these shares, the original secret can be restored. You can see demo app in the example project below
-
+Based on <a href="https://github.com/kryptco/SecretShare.swift">SecretShare.swift</a> 
 # Example
 
 ### How To Split
@@ -105,7 +105,7 @@ print(secret)
 ## CocoaPods
 
 ```shell
-pod 'SwiftySSS', '~> 0.0.1'
+pod 'SwiftySSS', '~> 0.1'
 ```
 
 # Contributing and License

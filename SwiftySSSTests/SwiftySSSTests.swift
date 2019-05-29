@@ -79,7 +79,22 @@ class ShamirSecretShareTests: XCTestCase {
         }
     }
     
-    func testAndroidShares() {
+    func testDefinedShares() {
+        let message = Data([UInt8]("Hello World!!!".utf8))
+        
+        do {
+            let secret = try Secret(data: message, threshold: 3, shares: 6)
+            let shares = try secret.split()
+            let recon  = try Secret.combine(shares: [shares[0], shares[0], shares[1], shares[1], shares[2], shares[2]])
+            
+            XCTAssert(recon == secret.data, "data mismatch")
+            
+        } catch {
+            XCTFail("ERROR: \(error)")
+        }
+    }
+    
+    func testDuplicateShares() {
         do {
             let secret = "Hello World!"
             let share1 = Secret.Share(point: 1, bytes: Data(hex: "8d736120eef1ca0b2b58971c")!.bytes)
@@ -107,6 +122,46 @@ class ShamirSecretShareTests: XCTestCase {
             self.measure {
                 let _ = try? Secret.combine(shares: shares)
             }
+            
+        } catch {
+            XCTFail("ERROR: \(error)")
+        }
+    }
+    
+    func testCustomRepresentation() {
+        do {
+            let data = try Data.random(size: 1000)
+            let secret = try Secret(data: data, threshold: 5, shares: 10)
+            let shares = try [Secret.Share](secret.split()[0 ..< 5])
+            
+            let sharesStrings = shares.map {$0.description(closure: { (point, bytes) -> String in
+                return "\(point)-\(Data(bytes).hexEncodedString())"
+            })}
+            
+            let restoredShares = try sharesStrings.map { try Secret.Share.init(closure: { (value) -> (point: UInt8, bytes: Data) in
+                
+                guard let stringValue = value as? String else {
+                    throw "Invalid String Representation"
+                }
+                
+                let components = stringValue.components(separatedBy: "-")
+
+                guard let pointComponent = components.first,
+                    let point = UInt8(pointComponent)  else {
+                    throw "Invalid String Representation"
+                }
+
+                guard let bytesComponent = components.last,
+                    let bytes = Data(hex: bytesComponent)  else {
+                        throw "Invalid String Representation"
+                }
+                
+                return (point, bytes)
+                
+            }, value: $0) }
+            
+            let reconData  = try Secret.combine(shares: restoredShares)
+            XCTAssertEqual(reconData, data)
             
         } catch {
             XCTFail("ERROR: \(error)")

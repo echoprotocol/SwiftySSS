@@ -46,7 +46,7 @@ public class Secret {
     /**
      An Invidivual Secret Share
      */
-    public struct Share: CustomStringConvertible {
+    public struct Share: CustomStringConvertible, Hashable {
         
         let point: UInt8
         var bytes: [UInt8]
@@ -68,21 +68,35 @@ public class Secret {
         }
         
         public init(string: String) throws {
-            
+
             let components = string.components(separatedBy: "-")
-            
+
             guard let pointComponent = components.first,
                 let point = UInt8(pointComponent)  else {
                 throw Errors.invalidStringRepresentation
             }
-            
+
             guard let bytesComponent = components.last,
                 let bytes = Data(hex: bytesComponent)?.bytes  else {
                     throw Errors.invalidStringRepresentation
             }
-            
+
             self.point = point
             self.bytes = bytes
+        }
+        
+        public init(closure: (Any) throws -> (point: UInt8, bytes: Data), value: Any) throws {
+            
+            let resultTuple = try closure(value)
+            let point = resultTuple.point
+            let data = resultTuple.bytes
+            
+            self.point = point
+            self.bytes = data.bytes
+        }
+        
+        public func description(closure: (UInt8, Data) -> String) -> String {
+            return closure(point, Data(bytes))
         }
         
         public var data: Data {
@@ -160,10 +174,12 @@ public class Secret {
             }
         })
         
+        let uniqueShares = Array(Set(shares))
+        
         var combinedBytes = [UInt8]()
         
         for i in 0 ..< dataLength {
-            let points = shares.map({ (GF256($0.point),  GF256($0.bytes[i])) })
+            let points = uniqueShares.map({ (GF256($0.point),  GF256($0.bytes[i])) })
             let result = try PolyGF256.interpolate(points: points, at: GF256.zero)
             combinedBytes.append(result.byte)
         }

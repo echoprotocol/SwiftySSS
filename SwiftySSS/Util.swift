@@ -13,6 +13,8 @@ enum DataError : Error {
     case utfEncoding
 }
 
+extension String: Error {}
+
 extension Data {
     static func random(size:Int) throws -> Data {
         var result = [UInt8](repeating: 0, count: size)
